@@ -1,0 +1,17 @@
+<h1> Webhook Request Lists: </h1>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Params</th>
+    <th> </th>
+    <th>Date</th>
+  </tr>
+  <% @logs.each do |log| %>
+      <tr>
+        <td><%= log.id %></td>
+        <td><%= log.params %></td>
+        <td> </td>
+        <td><%= log.date %></td>
+      </tr>
+  <% end %>
+</table>
