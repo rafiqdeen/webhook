@@ -6,6 +6,14 @@ class HomepageController < ApplicationController
   def create
     @log = Log.new(params: params.except(:action, :controller), date: DateTime.now)
     @log.save
+
+    if ENV['SLACK_WEBHOOK_URL']
+      HTTParty.post(
+          ENV['SLACK_WEBHOOK_URL'],
+          body: {:text => "Webhook triggered: \n Alert ID: #{params['alert']} \n Alert Name: #{params['name']}"}.to_json,
+          headers: {'Content-Type' => 'application/json'}
+      )
+    end
     render json: @log
   end
 end

@@ -51,11 +51,14 @@ GEM
     concurrent-ruby (1.0.5)
     crass (1.0.3)
     debug_inspector (0.0.3)
+    dotenv (2.1.1)
     erubis (2.7.0)
     execjs (2.7.0)
     ffi (1.9.23)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
+    httparty (0.14.0)
+      multi_xml (>= 0.5.2)
     i18n (0.9.5)
       concurrent-ruby (~> 1.0)
     jbuilder (2.7.0)
@@ -75,6 +78,7 @@ GEM
     mini_portile2 (2.3.0)
     minitest (5.11.3)
     multi_json (1.13.1)
+    multi_xml (0.5.5)
     nokogiri (1.8.2)
       mini_portile2 (~> 2.3.0)
     pg (0.20.0)
@@ -156,6 +160,8 @@ PLATFORMS
 DEPENDENCIES
   byebug
   coffee-rails (~> 4.1.0)
+  dotenv
+  httparty
   jbuilder (~> 2.0)
   jquery-rails
   pg
