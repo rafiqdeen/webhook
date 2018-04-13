@@ -4,7 +4,7 @@ class HomepageController < ApplicationController
   end
 
   def create
-    @log = Log.new(params: params.except(:action, :controller), date: DateTime.now)
+    @log = Log.new(params: params.except(:action, :controller, :homepage), date: DateTime.now)
     @log.save
 
     if ENV['SLACK_WEBHOOK_URL']
