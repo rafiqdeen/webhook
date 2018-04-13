@@ -10,7 +10,7 @@ class HomepageController < ApplicationController
     if ENV['SLACK_WEBHOOK_URL']
       HTTParty.post(
           ENV['SLACK_WEBHOOK_URL'],
-          body: {:text => "Webhook triggered: \n Alert ID: #{params['alert']} \n Alert Name: #{params['name']}"}.to_json,
+          body: {:text => "Webhook triggered: \n Alert ID: #{params['alert_id']} \n Alert Name: #{params['alert_name']}"}.to_json,
           headers: {'Content-Type' => 'application/json'}
       )
     end
